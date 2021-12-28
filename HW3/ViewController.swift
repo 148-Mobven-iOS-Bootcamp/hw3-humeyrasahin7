@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
-    
     @IBOutlet weak var showLabel: UILabel!
     
     /*
@@ -20,7 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var showFormattedButton: UIButton! */
     
     var date: Date!
-    
     var stringFullDate: String!
     var splitted = [String.SubSequence]()
     var dateString: String!
@@ -28,10 +26,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         datePicker.date = Date()
     }
     
+    //MARK: Action Functions
 
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag{
@@ -59,6 +57,8 @@ class ViewController: UIViewController {
    
     
 }
+
+//MARK: Date Extension
 
 extension Date {
     
@@ -98,8 +98,6 @@ extension Date {
        // return splitDate().replacingOccurrences(of: "-", with: "<>")
         return prettyString
     }
-    
-    
     
     
 }
