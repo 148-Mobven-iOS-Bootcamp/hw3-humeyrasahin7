@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HW3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Mld-po-cP3">
+                                <rect key="frame" x="1" y="104" width="414" height="216"/>
+                                <connections>
+                                    <action selector="dateValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="BEy-U3-rUG"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AA-Qf-Zb0">
+                                <rect key="frame" x="102" y="327" width="211" height="55"/>
+                                <color key="backgroundColor" red="0.84475442970000003" green="0.85415630610000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Hrb-jy-i3u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" red="0.84475442970000003" green="0.85415630610000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db8-Lt-Abj">
+                                <rect key="frame" x="146" y="415" width="120.5" height="28.5"/>
+                                <color key="backgroundColor" red="1" green="0.94152238369999997" blue="0.74863953490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Selected Day" cornerStyle="small">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g8S-57-PL5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxT-11-Q7b">
+                                <rect key="frame" x="146" y="466" width="120.5" height="28.5"/>
+                                <color key="backgroundColor" red="1" green="0.94152238369999997" blue="0.74863953490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Selected Month">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cyz-Wp-P8y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWQ-gr-9LB">
+                                <rect key="frame" x="146" y="512" width="120.5" height="28.5"/>
+                                <color key="backgroundColor" red="1" green="0.94152238369999997" blue="0.74863953490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Selected Year">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AV-c1-ygr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b05-jq-afD">
+                                <rect key="frame" x="147" y="559" width="120.5" height="28.5"/>
+                                <color key="backgroundColor" red="1" green="0.94152238369999997" blue="0.74863953490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Formatted ">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EP-zV-fFI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2AA-Qf-Zb0" firstAttribute="centerX" secondItem="b05-jq-afD" secondAttribute="centerX" id="0k9-h9-sEd"/>
+                            <constraint firstItem="Mld-po-cP3" firstAttribute="centerX" secondItem="2AA-Qf-Zb0" secondAttribute="centerX" id="3SQ-lc-skA"/>
+                            <constraint firstItem="db8-Lt-Abj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="5U5-uO-ZmW"/>
+                            <constraint firstItem="wxT-11-Q7b" firstAttribute="top" secondItem="db8-Lt-Abj" secondAttribute="bottom" constant="22.5" id="CBo-Vh-Hsn"/>
+                            <constraint firstItem="2AA-Qf-Zb0" firstAttribute="top" secondItem="Mld-po-cP3" secondAttribute="bottom" constant="7" id="DUo-Pt-uHE"/>
+                            <constraint firstItem="b05-jq-afD" firstAttribute="top" secondItem="JWQ-gr-9LB" secondAttribute="bottom" constant="18.5" id="Fk1-xK-uci"/>
+                            <constraint firstItem="db8-Lt-Abj" firstAttribute="top" secondItem="2AA-Qf-Zb0" secondAttribute="bottom" constant="33" id="SoA-mf-4p9"/>
+                            <constraint firstItem="Mld-po-cP3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="UIl-2E-ZNz"/>
+                            <constraint firstItem="Mld-po-cP3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="b3W-hZ-neA"/>
+                            <constraint firstItem="b05-jq-afD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="bug-Kv-7vr"/>
+                            <constraint firstItem="JWQ-gr-9LB" firstAttribute="top" secondItem="wxT-11-Q7b" secondAttribute="bottom" constant="17.5" id="dty-Up-NR8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mld-po-cP3" secondAttribute="trailing" constant="-21" id="hS8-IZ-poJ"/>
+                            <constraint firstItem="wxT-11-Q7b" firstAttribute="leading" secondItem="JWQ-gr-9LB" secondAttribute="leading" id="iLz-sM-RO1"/>
+                            <constraint firstItem="db8-Lt-Abj" firstAttribute="leading" secondItem="wxT-11-Q7b" secondAttribute="leading" id="klc-e3-Khm"/>
+                            <constraint firstItem="db8-Lt-Abj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lhR-4E-Sxe"/>
+                            <constraint firstItem="wxT-11-Q7b" firstAttribute="trailing" secondItem="JWQ-gr-9LB" secondAttribute="trailing" id="nV5-PD-LtN"/>
+                            <constraint firstItem="db8-Lt-Abj" firstAttribute="trailing" secondItem="wxT-11-Q7b" secondAttribute="trailing" id="wQv-HP-fyn"/>
+                            <constraint firstItem="2AA-Qf-Zb0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="102" id="yGZ-U5-exe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Mld-po-cP3" id="6lB-nN-MtA"/>
+                        <outlet property="showLabel" destination="2AA-Qf-Zb0" id="L2E-z3-xXN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
