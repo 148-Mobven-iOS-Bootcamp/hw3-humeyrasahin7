@@ -17,9 +17,7 @@ class CalculatorViewController: UIViewController {
     }
 
     private var userIsTyping = false
-
     private var brain = CalculatorBrain()
-
     var result: Double {
         get {
             return Double(resultLabel.text ?? "0.0") ?? 0.0
@@ -30,21 +28,21 @@ class CalculatorViewController: UIViewController {
     }
 
     @IBAction func digitButtonTapped(_ sender: UIButton) {
+        
         if userIsTyping {
-            var resultText = String(Int(result))
+            var resultText = String(result)
             resultText = resultText + String(sender.tag)
             result = NSString(string: resultText).doubleValue
-            print("1- \(result)")
         } else {
             result = Double(sender.tag)
             userIsTyping.toggle()
-            print(" 2 \(result)")
+          
         }
     }
 
     @IBAction func operationButtonTapped(_ sender: UIButton) {
         userIsTyping = false
-        if brain.number1 == 0.0{
+        if brain.number1 == nil {
             brain.number1 = result
         } else {
             brain.number2 = result
@@ -52,8 +50,7 @@ class CalculatorViewController: UIViewController {
         brain.setOperand(result)
         brain.performOperation(sender.titleLabel?.text ?? "")
         result = brain.result
-        print(" 3- \(result)")
-        
+      
     }
     
 }
